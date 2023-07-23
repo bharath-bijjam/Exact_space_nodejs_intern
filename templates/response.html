@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API RESPONSE</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        .container{
+            
+            min-width: 100vw;
+            min-height: 100vh;
+            display : flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .entry{
+            margin: 15px;
+        }
+        .labelelement{
+            padding-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            {% for key, value in json_data.items() %}
+            <div class="entry">
+                <label  class="labelelement" for="{{ key }}">{{ key }}:</label>
+                <input type="text" id="{{ key }}" name="{{ key }}" value="{{ value }}">
+                <br>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+</body>
+</html>
